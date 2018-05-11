@@ -9,16 +9,16 @@
   </h4>
 </div>
 <div class="modal-body">
-  <div>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel title="{{lang}}" *ngFor="let lang of languages">
-        <ng-template ngbPanelContent>
-          <div *ngIf="labels">
-            <label-edit-form [label]="getLabel(lang)"></label-edit-form>
-          </div>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let lang of languages">
+      <div class="card" >
+        <div class="card-header">{{lang}}</div>
+        <div class="card-body" *ngIf="labels">
+
+          <label-edit-form [label]="getLabel(lang)"></label-edit-form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

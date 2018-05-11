@@ -1,5 +1,11 @@
 <ul class="label-lang-switch">
-  <li *ngFor="let lang of languages"><a (click)="setLang(lang)">{{lang}}</a></li>
+  <li *ngFor="let lang of languages">
+    <a [ngClass]="{'language-link active': getLangSelected()==lang, 'language-link':getLangSelected()!=lang}" (click)="setLang(lang)">{{lang}}</a>
+  </li>
+
+  <li>
+    <label-table></label-table>
+  </li>
 </ul>
 
 

@@ -11,31 +11,36 @@ export class Label {
 
 @Injectable()
 export class LabelProductionService {
-  private labels: Subject<Label[]> = new BehaviorSubject([])
+    private labels: Subject<Label[]> = new BehaviorSubject([])
 
-  constructor(private http: Http, private labelService: LabelService) {
+    constructor(private http: Http, private labelService: LabelService) {
 
-    //we do this to cache the result of the http request.  If we directly map the observer, as it is lazy, http calls will be done for every label
-    this.labelService.lang.mergeMap(l => this.http.get(this.labelService.config.labelsFolderPath + "labels" + l + ".json"))
-      .map(res => res.json())
-      .catch(e => {
-        console.error("Error while loading lang file")
-        return Observable.of({})
-      })
-      .map(res => this.labels.next(res))
-      .subscribe()
-  }
+        //we do this to cache the result of the http request.  If we directly map the observer, as it is lazy, http calls will be done for every label
+        this.labelService.lang.mergeMap(l => this.http.get(this.labelService.config.labelsFolderPath + "labels" + l + ".json"))
+            .map(res => res.json())
+            .catch(e => {
+                console.error("Error while loading lang file")
+                return Observable.of({})
+            })
+            .map(res => this.labels.next(res))
+            .subscribe()
+    }
 
-  public get languages(): string[] {
-    return this.labelService.languages;
-  }
+    public get languages(): string[] {
+        return this.labelService.languages;
+    }
 
-  changeLang(lang: string) {
-    this.labelService.changeLang(lang)
-  }
+    changeLang(lang: string) {
+        this.labelService.changeLang(lang)
+    }
 
-  getLabel(key: string): Observable<Label> {
-    return this.labels.map(labels => labels[key])
-  }
+    getLabel(key: string): Observable<Label> {
+        return this.labels.map(labels => labels[key])
+    }
+
+    getLang(){
+        return this.labelService.lang.getValue();
+    }
+
 
 }

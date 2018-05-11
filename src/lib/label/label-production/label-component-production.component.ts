@@ -28,11 +28,4 @@ export class LabelComponentProduction implements OnInit {
     if( this.noInfo == false)
       this.labelHelp = this.label.map(l => (l) ? l.help : null)
   }
-
-  toggle() {
-    if( this.noInfo === false){
-      const modalRef = this.modalService.open(LabelInfoModalComponent,{size:"lg",windowClass:"xxl"});
-      modalRef.componentInstance.setLabelHelp(this.labelHelp)
-    }
-  }
 }

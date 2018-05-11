@@ -7,13 +7,18 @@ import {LabelEditionService} from "./labelEdition.service";
 })
 export class LabelLangSwitchComponentEdition {
 
-  languages: string[] = []
 
-  setLang(lang : any): void {
-    this.labelService.changeLang(lang)
-  }
+    languages: string[] = []
 
-  constructor(private labelService: LabelEditionService) {
-    this.languages = labelService.languages
-  }
+    setLang(lang : any): void {
+        this.labelService.changeLang(lang)
+    }
+
+    constructor(private labelService: LabelEditionService) {
+        this.languages = labelService.languages
+    }
+
+    getLangSelected(){
+        return this.labelService.getLang();
+    }
 }

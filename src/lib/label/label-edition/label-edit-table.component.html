@@ -1,0 +1,18 @@
+
+<h4 class="text-center fin-intro">{{key}}</h4>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let lang of languages">
+    <div class="card" >
+      <div class="card-header">{{lang}}</div>
+      <div class="card-body">
+
+        <label-edit-form [label]="getLabel(lang)"></label-edit-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pad-top-5erm"></div>
+<div>
+  <button class="btn btn-fin-default" (click)="goBack()">Back</button>
+</div>

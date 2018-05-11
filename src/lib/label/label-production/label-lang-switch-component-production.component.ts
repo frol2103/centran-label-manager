@@ -16,4 +16,8 @@ export class LabelLangSwitchComponentProduction {
   constructor(private labelService: LabelProductionService) {
     this.languages = labelService.languages
   }
+
+  getLangSelected(){
+    return this.labelService.getLang();
+  }
 }
