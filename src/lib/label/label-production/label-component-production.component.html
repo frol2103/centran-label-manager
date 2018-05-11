@@ -1,0 +1,5 @@
+<span *ngIf="labelValue | async" [innerHTML]="labelValue | async"></span>
+<span *ngIf="!(labelValue | async)" class="undefined">{{key}}</span>
+<span *ngIf="labelHelp | async "><i class="fa fa-info-circle" aria-hidden="true" (click)="toggle()"></i></span>
+
+
