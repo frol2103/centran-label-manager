@@ -1,4 +1,5 @@
 export {LabelModule} from './label/label.module'
+export {LabelService} from './label/label.service'
 
 export {LabelComponentEdition} from './label/label-edition/label-component-edition.component'
 export {LabelEditForm} from './label/label-edition/label-edit-form.component'
