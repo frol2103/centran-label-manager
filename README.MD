@@ -63,10 +63,9 @@ La structure minimal pour la création d'un package npm:
        "@angular/platform-browser-dynamic": "^5.0.0",
        "@types/jasmine": "2.5.36",
        "@types/node": "^6.0.46",
-      
      },
      "dependencies": {
-        //project dependencies
+        "project dependencies"
      }
   </pre>  
     
