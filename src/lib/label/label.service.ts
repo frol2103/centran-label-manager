@@ -21,7 +21,6 @@ export class LabelService {
   }
 
   public changeLang(lang: string) {
-    console.log("change lang", lang)
     this.lang.next(lang)
   }
 

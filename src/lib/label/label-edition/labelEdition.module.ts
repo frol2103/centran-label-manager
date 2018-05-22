@@ -31,10 +31,9 @@ import {LabelLangSwitchComponentEdition} from "./label-lang-switch-component-edi
     imports: [
         HttpModule,
         CommonModule,
-        NgbModule,
         ReactiveFormsModule,
         FormsModule,
-        ModalModule,
+        ModalModule.forRoot(),
         NgxPaginationModule,
         TooltipModule.forRoot(),
     ],

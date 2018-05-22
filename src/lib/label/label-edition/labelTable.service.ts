@@ -1,25 +1,24 @@
 import {Injectable, OnInit} from "@angular/core";
-import {Http} from "@angular/http";
 import {LabelService} from "../label.service";
 import {LabelEdition} from "./labelEdition.service";
 import {Observable} from "rxjs/Observable";
-import {HttpClient} from "@angular/common/http";
+import {Rxios} from "rxios";
 
 
 @Injectable()
-export class LabelTableService implements OnInit {
+export class LabelTableService {
 
-  ngOnInit(): void {
-
-  }
   private urlPrefix : string;
+  private rxios : Rxios;
 
-  constructor(private http: HttpClient, private labelService: LabelService) {
+  constructor(private labelService: LabelService) {
     this.urlPrefix = "/labelmanager/app/" + this.labelService.appName;
+    this.rxios = new Rxios({
+        baseURL: this.urlPrefix
+    })
   }
 
   public getData():Observable<LabelEdition[]> {
-    return this.http.get(this.urlPrefix + "/label")
-      .map((res : any) => res.json());
+    return this.rxios.get("/label")
   }
 }

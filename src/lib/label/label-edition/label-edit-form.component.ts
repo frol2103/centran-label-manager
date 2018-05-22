@@ -20,7 +20,6 @@ export class LabelEditForm implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.label)
         this.labelForm.patchValue({"help": this.label.help, "labelValue": this.label.value})
     }
 

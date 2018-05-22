@@ -3,6 +3,7 @@ import {LabelEdition, LabelEditionService} from "./labelEdition.service";
 import {Observable} from "rxjs";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {LabelEditModal} from "./label-edit-modal.component";
+import {BsModalService} from "ngx-bootstrap";
 
 
 @Component({
@@ -18,12 +19,12 @@ export class LabelComponentEdition implements OnInit {
     labelHelp: Observable<string>;
     @Input() noInfo : boolean = false;
 
-    constructor(private labelService: LabelEditionService, private modalService: NgbModal) {
+    constructor(private labelService: LabelEditionService, private modalService: BsModalService) {
     }
 
     onEdit() {
-        const modalRef = this.modalService.open(LabelEditModal, {size: "lg", windowClass: "xxl"});
-        modalRef.componentInstance.setKey(this.key)
+        const modalRef = this.modalService.show(LabelEditModal,Object.assign({}, { class: 'gray modal-lg' }));
+        modalRef.content.setKey(this.key)
     }
     ngOnInit() {
         this.label = this.labelService.getLabel(this.key)

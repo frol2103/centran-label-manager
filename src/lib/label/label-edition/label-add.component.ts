@@ -1,7 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from "@angular/core";
-import {BsModalRef, BsModalService} from "ngx-bootstrap";
-import {LabelEdition, LabelEditionService} from "./labelEdition.service";
-import {LabelTableService} from "./labelTable.service";
+import {Component, EventEmitter, OnInit, Output, } from "@angular/core";
+import {LabelEditionService} from "./labelEdition.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({

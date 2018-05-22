@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import {BsModalRef} from "ngx-bootstrap";
 
 @Component({
   selector: 'label-info-modal-component',
@@ -10,7 +11,7 @@ export class LabelInfoModalComponent implements OnInit {
 
   public labelHelp : string;
 
-  constructor(public activeModal: NgbActiveModal) {
+  constructor(public activeModal: BsModalRef) {
   }
 
   ngOnInit() {

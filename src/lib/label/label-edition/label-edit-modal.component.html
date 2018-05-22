@@ -14,7 +14,6 @@
       <div class="card" >
         <div class="card-header">{{lang}}</div>
         <div class="card-body" *ngIf="labels">
-
           <label-edit-form [label]="getLabel(lang)"></label-edit-form>
         </div>
       </div>
@@ -23,5 +22,5 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancel</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.hide()">Cancel</button>
 </div>
