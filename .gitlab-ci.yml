@@ -4,6 +4,8 @@ stages:
 lint:
   stage: lint
   except: ["tags"]
+  tags:
+    - docker
   script:
     - npm run lint
   artifacts:
