@@ -1,0 +1,11 @@
+stages:
+  - lint
+
+lint:
+  stage: build
+  except: ["tags"]
+  script:
+    - npm run lint
+  artifacts:
+    untracked: true
+    expire_in: 1 hour
