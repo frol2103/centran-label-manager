@@ -9,7 +9,7 @@ pwd
 ls $DIR
 
 docker run \
-  -v ${$DIR}/ :/ \
+  -v $DIR/ :/ \
   -u $(id -u)\
   --dns 10.23.142.11 \
   --dns 10.20.128.201 \
