@@ -12,3 +12,8 @@
   color: black;
   padding: 1rem;
 }
+
+.modal-xl{
+    width: 750px;
+    margin: auto;
+}

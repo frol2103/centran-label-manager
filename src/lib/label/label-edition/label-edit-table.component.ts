@@ -4,6 +4,7 @@ import {LabelEdition} from "./labelEdition.service";
 @Component({
   selector: 'label-edit-table',
   templateUrl: './label-edit-table.component.html',
+  styleUrls: ['./label-edit-table.component.css']
 })
 export class LabelEditTable {
 

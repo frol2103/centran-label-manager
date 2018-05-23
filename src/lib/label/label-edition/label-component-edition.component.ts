@@ -23,7 +23,7 @@ export class LabelComponentEdition implements OnInit {
     }
 
     onEdit() {
-        const modalRef = this.modalService.show(LabelEditModal,Object.assign({}, { class: 'gray modal-lg' }));
+        const modalRef = this.modalService.show(LabelEditModal,{ class: 'gray modal-lg modal-xl' });
         modalRef.content.setKey(this.key)
     }
     ngOnInit() {

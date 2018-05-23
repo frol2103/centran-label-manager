@@ -35,7 +35,7 @@ export class LabelTable {
       for(let e in this.labels){
         this.keys.push(e);
       }
-      this.modalRef = this.modalService.show(template,{class: 'modal-custom-lg'});
+      this.modalRef = this.modalService.show(template,{class: 'gray modal-lg modal-xl'});
     }, error => {
       console.error("Error loading labels :" +error);
     });

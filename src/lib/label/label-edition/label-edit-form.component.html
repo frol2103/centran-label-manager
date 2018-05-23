@@ -1,12 +1,12 @@
 <form [formGroup]="labelForm" (ngSubmit)="onSubmit()" novalidate>
 
   <div class="form-group">
-    <span class="label">label </span>
-    <input class="form-control" formControlName="labelValue">
+    <label for="input">Label </label>
+    <input id="input" class="form-control" formControlName="labelValue">
   </div>
   <div class="form-group">
-    <span class="label">help</span>
-    <textarea formControlName="help"></textarea>
+    <label for="textarea">Help</label>
+    <textarea id="textarea" class="form-control" formControlName="help"></textarea>
   </div>
 
   <button type="submit" class="btn btn-success" [disabled]="submitPending">
