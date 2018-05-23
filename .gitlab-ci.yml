@@ -2,7 +2,7 @@ stages:
   - lint
 
 lint:
-  stage: build
+  stage: lint
   except: ["tags"]
   script:
     - npm run lint
