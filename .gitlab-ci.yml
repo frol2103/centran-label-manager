@@ -3,11 +3,7 @@ stages:
 
 lint:
   stage: lint
-  except: ["tags"]
   tags:
     - docker
   script:
-    - npm run lint
-  artifacts:
-    untracked: true
-    expire_in: 1 hour
+    - ./lint.bash
