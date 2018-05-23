@@ -11,7 +11,7 @@ ls $DIR
 echo ${URBAIN_ROOT:-$DIR}
 
 docker run \
-  -v ${URBAIN_ROOT:-$DIR} :/src \
+  -v ${URBAIN_ROOT:-$DIR}/src :/ \
   -u $(id -u)\
   --dns 10.23.142.11 \
   --dns 10.20.128.201 \
