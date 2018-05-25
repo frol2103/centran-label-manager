@@ -5,7 +5,7 @@ import {LabelEditionService} from "./labelEdition.service";
   selector: 'label-lang-switch',
   templateUrl: './label-lang-switch-component-edition.component.html',
 })
-export class LabelLangSwitchComponentEdition {
+export class LabelLangSwitchComponentEdition{
 
 
     languages: string[] = []

@@ -1,7 +1,6 @@
-import {ModuleWithProviders, NgModule, isDevMode} from "@angular/core";
+import {ModuleWithProviders, NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {LabelConfig} from "./label.config";
-import {LabelEditionModule} from "./label-edition/labelEdition.module";
 import {LabelProductionModule} from "./label-production/labelProduction.module";
 import {LabelService} from "./label.service";
 
@@ -13,12 +12,13 @@ import {LabelService} from "./label.service";
 })
 export class LabelModule {
 
-  static switch() : ModuleWithProviders {
-    if(isDevMode()){
-      return {
-        ngModule : LabelEditionModule
-      }
+  static production() : ModuleWithProviders {
+    return {
+        ngModule : LabelProductionModule
     }
+  }
+
+  static edition() : ModuleWithProviders {
     return {
         ngModule : LabelProductionModule
     }

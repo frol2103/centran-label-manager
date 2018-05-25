@@ -5,9 +5,9 @@ import {LabelLangSwitchComponentProduction} from "./label-lang-switch-component-
 import {LabelProductionService} from "./labelProduction.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {HttpModule} from "@angular/http";
 import {LabelPipeProduction} from "./label-pipe-production.pipe";
 import {LabelInfoModalComponent} from "../label-info-modal/label-info-modal.component";
+import {TooltipModule} from "ngx-bootstrap";
 
 @NgModule({
   declarations: [
@@ -17,10 +17,10 @@ import {LabelInfoModalComponent} from "../label-info-modal/label-info-modal.comp
     LabelInfoModalComponent
   ],
   imports: [
-    HttpModule,
     CommonModule,
     NgbModule,
     ReactiveFormsModule,
+    TooltipModule.forRoot(),
   ],
   providers: [LabelProductionService],
   entryComponents:[LabelInfoModalComponent],

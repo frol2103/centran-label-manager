@@ -1,4 +1,3 @@
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgModule} from "@angular/core";
 import {LabelEditionService} from "./labelEdition.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -29,7 +28,6 @@ import {LabelLangSwitchComponentEdition} from "./label-lang-switch-component-edi
         LabelAddTable
     ],
     imports: [
-        HttpModule,
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
