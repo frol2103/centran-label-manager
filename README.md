@@ -73,14 +73,11 @@ La structure minimal pour la création d'un package npm:
  
   <pre> npm run build </pre>
   
- * Etape 3 : Package Locally
+ * Etape 3 : Publish 
  
-  <pre>
-  cd dist 
-  npm pack ==>  this command generate a .zip</pre>
+  
   
  * Etape 4 : Install 
  
   <pre>
-  cp .zip ./otherProject/
-  npm install .zip </pre>
+    npm install @centran/centran-label-manager </pre>

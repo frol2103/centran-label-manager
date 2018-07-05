@@ -1,14 +1,19 @@
 {
   "name": "centran-label-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Centran Label Manager",
   "main": "./bundles/centran-label-manager.umd.js",
   "module": "./centran-label-manager.es5.js",
   "es2015": "./centran-label-manager.js",
   "typings": "./centran-label-manager.d.ts",
-  "author": "",
+  "author": "Centran",
+  "homepage": "https://github.com/centran-be/centran-label-manager.git",
   "license": "MIT",
-  "repository": {},
+  "keywords": ["Centran","Label","Angular", "Angular 2"],
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/centran-be/centran-label-manager.git"
+  },
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
@@ -17,24 +22,9 @@
     "clean": "rimraf out-tsc dist/*",
     "prebuild": "npm run clean",
     "build": "node build.js",
-    "build-demo": "tsc -p src/demo/",
-    "build-demo:watch": "tsc -p src/demo/ -w",
-    "serve": "lite-server -c=bs-config.json",
-    "prestart": "npm run build-demo",
-    "start": "concurrently \"npm run build-demo:watch\" \"npm run serve\"",
-    "build-test": "tsc -p src/lib/tsconfig.spec.json",
-    "build-test:watch": "tsc -p src/lib/tsconfig.spec.json -w",
-    "pretest": "npm run build-test",
-    "test": "concurrently \"npm run build-test:watch\" \"karma start karma.conf.js\"",
-    "coverage": "karma start karma-coverage.conf.js --single-run",
-    "pretest:once": "npm run build-test",
-    "test:once": "karma start karma.conf.js --single-run",
-    "preintegration": "npm run build && cd integration && npm run clean && npm install",
-    "integration": "npm run integration:aot && npm run integration:jit",
-    "integration:jit": "cd integration && npm run e2e",
-    "integration:aot": "cd integration && npm run e2e:aot",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "release": "standard-version"
+    "release": "standard-version",
+    "package" : "npm run clean && npm run build"
   },
   "peerDependencies": {
     "@angular/core": ">=5.0.0 <6.0.0"
@@ -84,6 +74,5 @@
     "ngx-pagination": "^3.1.1",
     "rxios": "^1.1.2",
     "axios": "^0.18.0"
-
   }
 }

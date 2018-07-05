@@ -18,7 +18,7 @@ import {TooltipModule} from "ngx-bootstrap";
   ],
   imports: [
     CommonModule,
-    NgbModule,
+    NgbModule.forRoot(),
     ReactiveFormsModule,
     TooltipModule.forRoot(),
   ],
