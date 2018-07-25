@@ -1,0 +1,19 @@
+.undefinedLabel {
+  color: red;
+}
+
+.infobulle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-left-style: solid;
+  border-width: 1rem;
+  border-color: rgb(88, 162, 234);
+  background-color: #f3f4f7;
+  color: black;
+  padding: 1rem;
+}
+
+.modal-xl{
+    width: 750px;
+    margin: auto;
+}
