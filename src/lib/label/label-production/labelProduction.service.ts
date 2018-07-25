@@ -20,13 +20,14 @@ export class LabelProductionService {
             baseURL: this.labelService.config.labelsFolderPath
         })
         //we do this to cache the result of the http request.  If we directly map the observer, as it is lazy, http calls will be done for every label
-        this.labelService.lang.mergeMap(l => this.rxios.get("labels" + l + ".json"))
-            .map((res : any) => res.json())
+
+        this.labelService.lang.mergeMap(l => this.rxios.get("labels" + l + ".json").toPromise())
+            .map((res : Promise<any>) => res)
+            .map((res : any)  => this.labels.next(res))
             .catch(e => {
                 console.error("Error while loading lang file")
                 return Observable.of({})
             })
-            .map(res  => this.labels.next(res))
             .subscribe()
     }
 

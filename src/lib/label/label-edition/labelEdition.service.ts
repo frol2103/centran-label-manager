@@ -3,6 +3,7 @@ import {Observable} from "rxjs/Observable";
 import {BehaviorSubject, Subject} from "rxjs";
 import {LabelService} from "../label.service";
 import {Rxios} from "rxios";
+import 'rxjs/add/operator/do';
 
 export class LabelEdition {
   constructor(public key: string, public value: string, public help: string, public lang: string) {
@@ -29,7 +30,6 @@ export class LabelEditionService {
         })
             .map((res: Promise<any>) => res)
             .map((res : any) => {
-                console.log("Here " + res)
                 const l = this.labels.next(res)
                 this.loaded = true
                 return l
