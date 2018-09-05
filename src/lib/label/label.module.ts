@@ -4,6 +4,7 @@ import {LabelConfig} from "./label.config";
 import {LabelProductionModule} from "./label-production/labelProduction.module";
 import {LabelEditionModule} from "./label-edition/labelEdition.module";
 import {LabelService} from "./label.service";
+import {CookieService} from "./cookie/cookie.service";
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ export class LabelModule {
   static forRoot(config: LabelConfig) {
     return {
       ngModule: LabelModule,
-      providers: [LabelService, {provide: 'config', useValue: config}]
+      providers: [LabelService,CookieService, {provide: 'config', useValue: config}]
     }
   }
 }

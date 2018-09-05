@@ -1,6 +1,8 @@
 export {LabelModule} from './label/label.module'
 export {LabelService} from './label/label.service'
 
+export {CookieService} from './label/cookie/cookie.service'
+
 export {LabelComponentEdition} from './label/label-edition/label-component-edition.component'
 export {LabelEditForm} from './label/label-edition/label-edit-form.component'
 export {LabelEditModal} from './label/label-edition/label-edit-modal.component'
