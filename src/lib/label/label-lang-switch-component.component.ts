@@ -1,11 +1,11 @@
 import {Component} from "@angular/core";
-import {LabelEditionService} from "./labelEdition.service";
+import {LabelService} from "./label.service";
 
 @Component({
   selector: 'label-lang-switch',
-  templateUrl: './label-lang-switch-component-edition.component.html',
+  templateUrl: './label-lang-switch-component.component.html',
 })
-export class LabelLangSwitchComponentEdition{
+export class LabelLangSwitchComponent{
 
 
     languages: string[] = []
@@ -14,11 +14,11 @@ export class LabelLangSwitchComponentEdition{
         this.labelService.changeLang(lang)
     }
 
-    constructor(private labelService: LabelEditionService) {
+    constructor(private labelService: LabelService) {
         this.languages = labelService.languages
     }
 
     getLangSelected(){
-        return this.labelService.getLang();
+        return this.labelService.lang.getValue();
     }
 }

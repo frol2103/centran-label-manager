@@ -1,11 +1,11 @@
 import {Pipe, PipeTransform} from "@angular/core";
-import {LabelEditionService} from "./labelEdition.service";
 import {Observable} from "rxjs";
+import {LabelService} from "./label.service";
 
 
 @Pipe({name: 'label'})
-export class LabelPipeEdition implements PipeTransform {
-  constructor(private labelService: LabelEditionService) {
+export class LabelPipe implements PipeTransform {
+  constructor(private labelService: LabelService) {
 
   }
 

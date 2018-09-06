@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {LabelEdition} from "./labelEdition.service";
+import {Label} from "./label.service";
 
 @Component({
   selector: 'label-edit-table',
@@ -15,7 +15,7 @@ export class LabelEditTable {
     languages:string[];
 
     @Input("labels")
-    labels:LabelEdition[];
+    labels:Label[];
 
     @Output() onBack = new EventEmitter();
 
@@ -24,7 +24,7 @@ export class LabelEditTable {
         if (found) {
             return found;
         } else {
-            return new LabelEdition(this.key, null, null, lang)
+            return new Label(this.key, null, null, lang)
         }
     }
 

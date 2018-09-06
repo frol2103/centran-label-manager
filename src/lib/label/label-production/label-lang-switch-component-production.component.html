@@ -1,6 +1,0 @@
-<li *ngFor="let lang of languages">
-    <a [ngClass]="{'language-link active': getLangSelected()==lang, 'language-link':getLangSelected()!=lang}"
-            (click)="setLang(lang)">{{lang}}
-    </a>
-</li>
-

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {LabelEdition, LabelEditionService} from "./labelEdition.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Label, LabelService} from "./label.service";
 
 
 @Component({
@@ -8,11 +8,11 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   templateUrl: './label-edit-form.component.html',
 })
 export class LabelEditForm implements OnInit {
-    @Input() label: LabelEdition
+    @Input() label: Label
     labelForm: FormGroup
     submitPending = false
 
-    constructor(private fb: FormBuilder, private labelService: LabelEditionService) {
+    constructor(private fb: FormBuilder, private labelService: LabelService) {
         this.labelForm = this.fb.group({
             labelValue: '',
             help: '',
@@ -26,7 +26,7 @@ export class LabelEditForm implements OnInit {
     onSubmit() {
         this.submitPending = true
         this.labelService
-            .update(new LabelEdition(this.label.key, this.labelForm.get("labelValue").value, this.labelForm.get("help").value, this.label.lang))
+            .update(new Label(this.label.key, this.labelForm.get("labelValue").value, this.labelForm.get("help").value, this.label.lang))
             .subscribe(
                 null,
                 (e) => console.log("error", e),

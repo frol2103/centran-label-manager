@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
-import {LabelEdition, LabelEditionService} from "./labelEdition.service";
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {BsModalRef} from "ngx-bootstrap";
+import {Label, LabelService} from "./label.service";
 
 @Component({
   templateUrl: './label-edit-modal.component.html',
@@ -10,9 +9,9 @@ import {BsModalRef} from "ngx-bootstrap";
 export class LabelEditModal {
     key: string
     languages: string[];
-    labels: LabelEdition[]
+    labels: Label[]
 
-    constructor(private labelService: LabelEditionService, public activeModal: BsModalRef) {
+    constructor(private labelService: LabelService, public activeModal: BsModalRef) {
         this.languages = labelService.languages
     }
 
@@ -26,7 +25,7 @@ export class LabelEditModal {
         if (found) {
             return found;
         } else {
-            return new LabelEdition(this.key, null, null, lang)
+            return new Label(this.key, null, null, lang)
         }
     }
 

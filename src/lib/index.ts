@@ -1,20 +1,19 @@
+import {LabelLangSwitchComponent} from "./label/label-lang-switch-component.component";
+import {LabelAddTable} from "./label/label-add.component";
+
 export {LabelModule} from './label/label.module'
 export {LabelService} from './label/label.service'
 
-export {CookieService} from './label/cookie/cookie.service'
 
-export {LabelComponentEdition} from './label/label-edition/label-component-edition.component'
-export {LabelEditForm} from './label/label-edition/label-edit-form.component'
-export {LabelEditModal} from './label/label-edition/label-edit-modal.component'
-export {LabelLangSwitchComponentEdition} from './label/label-edition/label-lang-switch-component-edition.component'
-export {LabelPipeEdition} from './label/label-edition/label-pipe-edition.pipe'
-export {LabelEditionModule} from './label/label-edition/labelEdition.module'
-export {LabelEdition, LabelEditionService} from './label/label-edition/labelEdition.service'
+export {CookieService} from './label/cookie/cookie.service'
 
 export {LabelInfoModalComponent} from './label/label-info-modal/label-info-modal.component'
 
-export {LabelPipeProduction} from './label/label-production/label-pipe-production.pipe'
-export {LabelLangSwitchComponentProduction} from './label/label-production/label-lang-switch-component-production.component'
-export {LabelComponentProduction} from './label/label-production/label-component-production.component'
-export {LabelProductionModule} from './label/label-production/labelProduction.module'
-export {Label, LabelProductionService} from './label/label-production/labelProduction.service'
+export {LabelPipe} from './label/label-pipe.pipe'
+export {LabelComponent} from './label/label-component.component'
+export {LabelEditForm} from './label/label-edit-form.component'
+export {LabelEditModal} from './label/label-edit-modal.component'
+export {LabelEditTable} from './label/label-edit-table.component'
+export {LabelLangSwitchComponent} from './label/label-lang-switch-component.component'
+export {LabelTable} from './label/label-table.component'
+export {LabelAddTable} from './label/label-add.component'

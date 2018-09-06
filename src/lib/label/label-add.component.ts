@@ -1,5 +1,4 @@
 import {Component, EventEmitter, OnInit, Output, } from "@angular/core";
-import {LabelEditionService} from "./labelEdition.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
@@ -23,7 +22,7 @@ export class LabelAddTable implements OnInit{
 
   addForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private labelService: LabelEditionService) {
+  constructor(private fb: FormBuilder) {
 
   }
 

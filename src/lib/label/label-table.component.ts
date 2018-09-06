@@ -1,8 +1,8 @@
 import {Component, TemplateRef} from "@angular/core";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
-import {LabelEdition, LabelEditionService} from "./labelEdition.service";
 import {LabelTableService} from "./labelTable.service";
 import {PaginationInstance} from "ngx-pagination";
+import {Label, LabelService} from "./label.service";
 
 @Component({
   selector: 'label-table',
@@ -24,7 +24,7 @@ export class LabelTable {
     currentPage: 1
   };
 
-  constructor(private modalService: BsModalService,private labelService: LabelEditionService, private labelTableService:LabelTableService) {
+  constructor(private modalService: BsModalService,private labelService: LabelService, private labelTableService:LabelTableService) {
     this.languages = labelService.languages;
   }
 
@@ -47,7 +47,7 @@ export class LabelTable {
 
   addLabel(value:string){
     this.labelService
-      .update(new LabelEdition(value, null, null, 'FR'))
+      .update(new Label(value, null, null, 'FR'))
       .subscribe(
         null,
         (e) => console.error("error", e),
@@ -77,7 +77,7 @@ export class LabelTable {
     if (found) {
       return found;
     } else {
-      return new LabelEdition(key, null, null, lang)
+      return new Label(key, null, null, lang)
     }
   }
 

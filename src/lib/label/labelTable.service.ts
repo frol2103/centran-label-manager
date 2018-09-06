@@ -1,6 +1,5 @@
-import {Injectable, OnInit} from "@angular/core";
-import {LabelService} from "../label.service";
-import {LabelEdition} from "./labelEdition.service";
+import {Injectable} from "@angular/core";
+import {Label, LabelService} from "./label.service";
 import {Observable} from "rxjs/Observable";
 import {Rxios} from "rxios";
 
@@ -18,7 +17,7 @@ export class LabelTableService {
     })
   }
 
-  public getData():Observable<LabelEdition[]> {
+  public getData():Observable<Label[]> {
     return this.rxios.get("/label")
   }
 }

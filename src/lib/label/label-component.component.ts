@@ -1,25 +1,24 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {LabelEdition, LabelEditionService} from "./labelEdition.service";
 import {Observable} from "rxjs";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {LabelEditModal} from "./label-edit-modal.component";
 import {BsModalService} from "ngx-bootstrap";
+import {Label, LabelService} from "./label.service";
+import {LabelEditModal} from "./label-edit-modal.component";
 
 
 @Component({
   selector: 'l',
-  templateUrl: './label-component-edition.component.html',
-  styleUrls: ['label-component-edition.component.css']
+  templateUrl: './label-component.component.html',
+  styleUrls: ['label-component.component.css']
 })
-export class LabelComponentEdition implements OnInit {
+export class LabelComponent implements OnInit {
     @Input() key: string;
     @Input() needed : boolean;
-    label: Observable<LabelEdition>;
+    label: Observable<Label>;
     labelValue: Observable<string>;
     labelHelp: Observable<string>;
     @Input() noInfo : boolean = false;
 
-    constructor(private labelService: LabelEditionService, private modalService: BsModalService) {
+    constructor(private labelService: LabelService, private modalService: BsModalService) {
     }
 
     onEdit() {
