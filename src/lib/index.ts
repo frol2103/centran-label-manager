@@ -4,8 +4,6 @@ import {LabelAddTable} from "./label/label-add.component";
 export {LabelModule} from './label/label.module'
 export {LabelService} from './label/label.service'
 
-
-
 export {LabelInfoModalComponent} from './label/label-info-modal/label-info-modal.component'
 
 export {LabelPipe} from './label/label-pipe.pipe'
