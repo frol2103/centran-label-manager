@@ -54,7 +54,10 @@ export class LabelTable {
       .subscribe(
         null,
         (e) => console.error("error", e),
-        () => this.back()
+        () => {
+            this.labelService.refreshLabels();
+            this.back()
+        }
       )
   }
 
