@@ -21,4 +21,8 @@ export class LabelLangSwitchComponent{
     getLangSelected(){
         return this.labelService.lang.getValue();
     }
+
+    getProd(){
+        return this.labelService.prod;
+    }
 }
