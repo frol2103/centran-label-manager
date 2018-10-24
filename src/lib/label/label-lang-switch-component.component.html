@@ -3,7 +3,7 @@
     <a [ngClass]="{'language-link active': getLangSelected()==lang, 'language-link':getLangSelected()!=lang}" (click)="setLang(lang)">{{lang}}</a>
   </li>
 
-  <li>
+  <li *ngIf="!getProd()">
     <label-table></label-table>
   </li>
 </ul>

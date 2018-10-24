@@ -9,6 +9,7 @@ import "rxjs/add/operator/find"
 @Component({
   selector: 'label-table',
   templateUrl: './label-table.component.html',
+  styleUrls:['./label-table.component.css']
 })
 export class LabelTable {
 
@@ -38,7 +39,7 @@ export class LabelTable {
         if( !this.keys.includes(this.labels[e].key))
         this.keys.push(this.labels[e].key);
       }
-      this.modalRef = this.modalService.show(template,{class: 'gray modal-lg modal-xl'});
+      this.modalRef = this.modalService.show(template,{class: 'gray modal-lg modal-xl min-size'});
     }, error => {
       console.error("Error loading labels :" +error);
     });
@@ -50,7 +51,7 @@ export class LabelTable {
 
   addLabel(value:string){
     this.labelService
-      .update(new Label(value, null, null, 'FR'))
+      .update(new Label(value, "TO_BE_CHANGED", null, 'FR'))
       .subscribe(
         null,
         (e) => console.error("error", e),
