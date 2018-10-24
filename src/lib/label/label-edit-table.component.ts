@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {Label} from "./label.service";
+import "rxjs/add/operator/find"
 
 @Component({
   selector: 'label-edit-table',
@@ -15,12 +16,17 @@ export class LabelEditTable {
     languages:string[];
 
     @Input("labels")
-    labels:Label[];
+    labels: Label[] = [];
 
     @Output() onBack = new EventEmitter();
 
     getLabel(lang: string) {
-        let found = this.labels[this.key].find((l:any) => l.lang === lang)
+        let found;
+        for( let label of this.labels){
+            if( label.key == this.key && label.lang == lang){
+                found = label;
+            }
+        }
         if (found) {
             return found;
         } else {

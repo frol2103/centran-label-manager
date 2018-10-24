@@ -1,6 +1,6 @@
 {
   "name": "centran-label-manager",
-  "version": "2.0.0",
+  "version": "2.2.5",
   "description": "Centran Label Manager",
   "main": "./bundles/centran-label-manager.umd.js",
   "module": "./centran-label-manager.es5.js",

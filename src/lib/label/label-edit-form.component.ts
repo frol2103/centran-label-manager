@@ -30,7 +30,10 @@ export class LabelEditForm implements OnInit {
             .subscribe(
                 null,
                 (e) => console.log("error", e),
-                () => this.submitPending = false
+                () => {
+                    this.labelService.refreshLabels();
+                    this.submitPending = false
+                }
             )
 
     }

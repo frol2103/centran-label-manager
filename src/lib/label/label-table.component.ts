@@ -3,6 +3,8 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {LabelTableService} from "./labelTable.service";
 import {PaginationInstance} from "ngx-pagination";
 import {Label, LabelService} from "./label.service";
+import "rxjs/add/operator/find"
+
 
 @Component({
   selector: 'label-table',
@@ -12,7 +14,7 @@ export class LabelTable {
 
   languages: string[] = [];
   keys: string[] = [];
-  labels: any;
+  labels: Label[];
   modalRef: BsModalRef;
 
   keyForEdit:string=null;
@@ -33,7 +35,8 @@ export class LabelTable {
     this.labelTableService.getData().subscribe(data => {
       this.labels = data;
       for(let e in this.labels){
-        this.keys.push(e);
+        if( !this.keys.includes(this.labels[e].key))
+        this.keys.push(this.labels[e].key);
       }
       this.modalRef = this.modalService.show(template,{class: 'gray modal-lg modal-xl'});
     }, error => {
@@ -51,7 +54,10 @@ export class LabelTable {
       .subscribe(
         null,
         (e) => console.error("error", e),
-        () => this.back()
+        () => {
+            this.labelService.refreshLabels();
+            this.back()
+        }
       )
   }
 
@@ -61,7 +67,8 @@ export class LabelTable {
     this.labelTableService.getData().subscribe(data => {
       this.labels = data;
       for(let e in this.labels){
-        this.keys.push(e);
+        if( !this.keys.includes(this.labels[e].key))
+        this.keys.push(this.labels[e].key);
       }
     }, error => {
       console.error("Error loading labels :" +error);
@@ -73,7 +80,12 @@ export class LabelTable {
   }
 
   getLabel(key:string, lang: string) {
-    let found = this.labels[key].find((l:any) => l.lang === lang)
+    let found;
+    for(let e of this.labels){
+      if( e.key === key && e.lang === lang){
+        found = e;
+      }
+    }
     if (found) {
       return found;
     } else {

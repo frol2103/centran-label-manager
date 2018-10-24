@@ -11,9 +11,8 @@ export class LabelTableService {
   private rxios : Rxios;
 
   constructor(private labelService: LabelService) {
-    this.urlPrefix = "/labelmanager/app/" + this.labelService.appName;
     this.rxios = new Rxios({
-        baseURL: this.urlPrefix
+        baseURL: this.labelService.labelSourceUrl
     })
   }
 

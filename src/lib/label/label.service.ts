@@ -71,7 +71,7 @@ export class LabelService {
     }
 
     update(label: Label): Observable<{}> {
-        return this.rxios.put("/label", label).do(v => this.refreshLabels())
+        return this.rxios.put("/label", label);
     }
 
     getLabel(key: string): Observable<Label> {
