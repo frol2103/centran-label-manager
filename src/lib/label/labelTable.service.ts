@@ -1,22 +1,25 @@
 import {Injectable} from "@angular/core";
 import {Label, LabelService} from "./label.service";
 import {Observable} from "rxjs/Observable";
-import {Rxios} from "rxios";
+import 'rxjs/add/observable/dom/ajax';
+import {ajax} from "rxjs/observable/dom/ajax";
 
 
 @Injectable()
 export class LabelTableService {
 
-  private urlPrefix : string;
-  private rxios : Rxios;
+
 
   constructor(private labelService: LabelService) {
-    this.rxios = new Rxios({
-        baseURL: this.labelService.labelSourceUrl
-    })
+
   }
 
   public getData():Observable<Label[]> {
-    return this.rxios.get("/label")
+
+    let get$ = ajax({
+      url: this.labelService.labelSourceUrl + "/label",
+        method:'GET'
+    }).map(e=> e.response)
+    return get$;
   }
 }

@@ -2,8 +2,9 @@ import {Inject, Injectable} from '@angular/core';
 import {LabelConfig} from "./label.config";
 import {BehaviorSubject} from "rxjs";
 import {Subject} from "rxjs/Subject";
-import {Rxios} from "rxios";
 import {Observable} from "rxjs/Observable";
+import {ajax} from "rxjs/observable/dom/ajax";
+
 
 export class Label {
     constructor(public key: string, public value: string, public help: string, public lang: string) {
@@ -15,19 +16,18 @@ export class LabelService {
 
     private labels: Subject<Label[]> = new BehaviorSubject([])
     private loaded: boolean = false;
-    private rxios: Rxios;
 
     public lang: BehaviorSubject<string>;
 
     constructor(@Inject('config') public config: LabelConfig) {
         this.lang = new BehaviorSubject<string>(this.languages[0])
-        this.rxios = new Rxios({
-            baseURL: this.labelSourceUrl
-        })
-
 
         this.lang.mergeMap(l => {
-            return this.rxios.get(this.urlPrefix + l + this.urlSuffix).toPromise()
+            let get$ = ajax({
+                url: this.labelSourceUrl + this.urlPrefix + l + this.urlSuffix,
+                method:'GET'
+            }).map(e => e.response);
+            return get$.toPromise()
         })
             .map((res: Promise<any>) => res)
             .map((res: any) => {
@@ -71,7 +71,16 @@ export class LabelService {
     }
 
     update(label: Label): Observable<{}> {
-        return this.rxios.put("/label", label);
+        let put$ = ajax({
+            url: this.labelSourceUrl + "/label",
+            method:'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: label
+        }).map(e => e.response);
+        return put$;
     }
 
     getLabel(key: string): Observable<Label> {
@@ -85,7 +94,11 @@ export class LabelService {
     }
 
     getMultilingualLabel(key: string): Observable<any> {
-        return this.rxios.get("/label/" + key);
+        let get$ = ajax({
+            url: this.labelSourceUrl + "/label/" + key,
+            method:'GET'
+        }).map(e => e.response);
+        return get$;
     }
 
 

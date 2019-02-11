@@ -1,6 +1,6 @@
 {
   "name": "centran-label-manager",
-  "version": "2.2.5",
+  "version": "2.2.8",
   "description": "Centran Label Manager",
   "main": "./bundles/centran-label-manager.umd.js",
   "module": "./centran-label-manager.es5.js",
@@ -71,8 +71,6 @@
     "@ng-bootstrap/ng-bootstrap": "^1.1.2",
     "ng-bootstrap": "^1.6.3",
     "ngx-bootstrap": "^2.0.5",
-    "ngx-pagination": "^3.1.1",
-    "rxios": "^1.1.2",
-    "axios": "^0.18.0"
+    "ngx-pagination": "^3.1.1"
   }
 }
