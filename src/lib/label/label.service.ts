@@ -22,7 +22,7 @@ export class LabelService {
     constructor(@Inject('config') public config: LabelConfig) {
         this.lang = new BehaviorSubject<string>(this.languages[0])
 
-        this.lang.mergeMap(l => {
+        this.lang.concatMap(l => {
             let get$ = ajax({
                 url: this.labelSourceUrl + this.urlPrefix + l + this.urlSuffix,
                 method:'GET'
