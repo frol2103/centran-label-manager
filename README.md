@@ -3,6 +3,21 @@
 * Creation et Installation Package NPM
 * Documentation Label Manager
 
+## TL;DR
+
+Build Library
+<pre> npm run package </pre>
+
+Zip Library 
+<pre> cd dist/ && npm pack </pre>
+
+Publish Library
+<pre> cd dist/
+npm login
+npm publish --public
+</pre>
+
+
 ## Création et Installation Package NPM
 
 La structure minimal pour la création d'un package npm: 
@@ -47,9 +62,10 @@ La structure minimal pour la création d'un package npm:
        "npm": ">= 3.0.0"
      },
      "scripts": {
-       "clean": "rimraf out-tsc dist/*",
-       "prebuild": "npm run clean",
-       "build": "node build.js"
+        "clean": "rimraf out-tsc dist/*",
+         "prebuild": "npm run clean",
+         "build": "node build.js",
+         "package" : "npm run clean && npm run build"
      },
      "peerDependencies": {
        "@angular/core": ">=5.0.0 <6.0.0"
@@ -69,17 +85,24 @@ La structure minimal pour la création d'un package npm:
      }
   </pre>  
     
- * Etape 2 : Build 
+ * Etape 2 : Package your library 
  
-  <pre> npm run build </pre>
+  <pre> npm run package </pre>
   
  * Etape 3 : Publish 
- 
-  
-  
+ <pre> 
+ cd dist/ 
+ npm login => ask for username , password and email address linked to NPM
+ npm publish --public
+ </pre>  
  * Etape 4 : Install 
- 
   <pre>
+    Locally: 
+    cd dist/ 
+    npm pack => used to create a .tgz of the library
+    npm install package.tgz
+    
+    Via NPM Directly:
     npm install @centran/centran-label-manager </pre>
     
 ### Import LabelModule 
