@@ -1,6 +1,6 @@
 {
   "name": "centran-label-manager",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "Centran Label Manager",
   "main": "./bundles/centran-label-manager.umd.js",
   "module": "./centran-label-manager.es5.js",
@@ -9,10 +9,15 @@
   "author": "Centran",
   "homepage": "https://github.com/centran-be/centran-label-manager.git",
   "license": "MIT",
-  "keywords": ["Centran","Label","Angular", "Angular 2"],
-  "repository" :
-  { "type" : "git",
-    "url" : "https://github.com/centran-be/centran-label-manager.git"
+  "keywords": [
+    "Centran",
+    "Label",
+    "Angular",
+    "Angular 2"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/centran-be/centran-label-manager.git"
   },
   "engines": {
     "node": ">= 6.9.0",
@@ -22,7 +27,9 @@
     "clean": "rimraf out-tsc dist/*",
     "prebuild": "npm run clean",
     "build": "node build.js",
-    "package" : "npm run clean && npm run build"
+    "postbuild": "node rename-package.js",
+    "package": "npm run build",
+    "postpackage": "cd .. && cd test-project && npm install ../lib/dist"
   },
   "peerDependencies": {
     "@angular/core": ">=5.0.0 <6.0.0"

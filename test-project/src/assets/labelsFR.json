@@ -1,0 +1,28 @@
+{
+  "example.first": {
+    "key": "example.first",
+    "help": null,
+    "value": "Premier Example"
+  },
+  "example.second": {
+    "key": "example.second",
+    "help": null,
+    "value": "Deuxième Example"
+  },
+  "example.third": {
+    "key": "example.third",
+    "help": null,
+    "value": "Troisième Example"
+  },
+  "example.with.numeric.parameter": {
+    "key" : "example.with.numeric.parameter",
+    "help": null,
+    "value": "Un Example avec la date en paramètre : {0} "
+  },
+  "example.with.map.parameter": {
+    "key" : "example.with.map.parameter",
+    "help": null,
+    "value": "Un Example avec la date en paramètre : {date} "
+  }
+
+}
