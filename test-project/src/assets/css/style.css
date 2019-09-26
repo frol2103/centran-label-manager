@@ -1,0 +1,15 @@
+.label-lang-switch li{
+  display: inline;
+}
+
+li a{
+  background-color: white;
+}
+
+li .active{
+  background-color: grey;
+}
+
+li a:hover{
+  background-color: lightgray;
+}
