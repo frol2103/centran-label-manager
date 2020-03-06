@@ -17,6 +17,7 @@ export class LabelTable {
   keys: string[] = [];
   labels: Label[];
   modalRef: BsModalRef;
+  filterKey : string;
 
   keyForEdit:string=null;
 

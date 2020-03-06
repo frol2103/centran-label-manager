@@ -1,17 +1,17 @@
 {
   "example.first": {
     "key": "example.first",
-    "help": null,
+    "help": "example tooltip",
     "value": "Premier Example"
   },
   "example.second": {
     "key": "example.second",
-    "help": null,
+    "help": "example tooltip",
     "value": "Deuxième Example"
   },
   "example.third": {
     "key": "example.third",
-    "help": null,
+    "help": "example tooltip",
     "value": "Troisième Example"
   },
   "example.with.numeric.parameter": {

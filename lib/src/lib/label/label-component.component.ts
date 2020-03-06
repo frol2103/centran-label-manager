@@ -18,6 +18,8 @@ export class LabelComponent implements OnInit {
     labelValue: Observable<string>;
     labelHelp: Observable<string>;
     @Input() noInfo : boolean = false;
+    @Input() positioning : string = "right";
+    @Input() customClass : string = "";
 
     constructor(private labelService: LabelService, private modalService: BsModalService) {
     }
@@ -56,6 +58,7 @@ export class LabelComponent implements OnInit {
         })
         if( this.noInfo == false) {
             this.labelHelp = this.label.map(l => (l) ? l.help : null)
+            console.log("HELP : " + this.labelHelp);
         }
 
     }

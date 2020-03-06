@@ -18,6 +18,8 @@
 
       <label-add (onAdd)="addLabel($event)"></label-add>
 
+      <input type="text" [(ngModel)]="filterKey" />
+
       <table class="table table-striped" >
         <thead>
         <tr>
@@ -33,7 +35,7 @@
         </tr>
         </thead>
         <tbody>
-        <ng-container *ngFor="let value of keys | paginate: config;">
+        <ng-container *ngFor="let value of keys | tableFilter: filterKey | paginate: config ">
           <tr>
             <td>{{value}}</td>
             <td *ngFor="let la of languages">
