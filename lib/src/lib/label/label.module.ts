@@ -14,6 +14,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {LabelTableService} from "./labelTable.service";
 import {LabelLangSwitchComponent} from "./label-lang-switch-component.component";
 import {LabelPipe} from "./label-pipe.pipe";
+import {TableFilterPipe} from "./table-filter.pipe";
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {LabelPipe} from "./label-pipe.pipe";
       LabelTable,
       LabelPipe,
       LabelEditTable,
-      LabelAddTable
+      LabelAddTable,
+      TableFilterPipe
   ],
   entryComponents: [LabelEditModal],
   providers:[LabelService,LabelTableService],

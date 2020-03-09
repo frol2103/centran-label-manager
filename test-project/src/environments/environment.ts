@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   assetsSource:"/test-project",
-  labelSourceUrl : "/assets/",
-  labelPrefix: "labels",
-  labelSuffix: ".json"
+  labelSourceUrl : "/backend",
+  labelPrefix: "/file/",
+  labelSuffix: ""
 };

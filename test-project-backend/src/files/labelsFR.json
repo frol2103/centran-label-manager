@@ -9,6 +9,11 @@
     "help": "example tooltip",
     "value": "Deuxième Example"
   },
+  "fxample.second": {
+    "key": "example.second",
+    "help": "example tooltip",
+    "value": "Deuxième Example"
+  },
   "example.third": {
     "key": "example.third",
     "help": "example tooltip",
@@ -23,6 +28,11 @@
     "key" : "example.with.map.parameter",
     "help": null,
     "value": "Un Example avec la date en paramètre : {date} "
+  },
+  "example.super.looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong":{
+    "key" : "example.super.looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong",
+    "help" : null,
+    "value" : "c'est long"
   }
 
 }

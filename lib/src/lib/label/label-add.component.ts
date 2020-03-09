@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 @Component({
   selector: 'label-add',
   template: '<form [formGroup]="addForm">' +
-  '<div class="row">' +
+  '<div class="row p-3">' +
   '<input type="text" formControlName="key" class="form-control col-md-10" [required]="true">' +
   '<div class="col-md-2"><button class="btn btn-fin03" [disabled]="addForm.invalid" (click)="add()"><span class="fa fa-plus "></span></button></div>' +
   '</div>' +
