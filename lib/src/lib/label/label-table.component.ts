@@ -1,9 +1,10 @@
-import {Component, TemplateRef} from "@angular/core";
+import {Component, OnInit, TemplateRef} from "@angular/core";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {LabelTableService} from "./labelTable.service";
 import {PaginationInstance} from "ngx-pagination";
 import {Label, LabelService} from "./label.service";
 import "rxjs/add/operator/find"
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -11,13 +12,12 @@ import "rxjs/add/operator/find"
   templateUrl: './label-table.component.html',
   styleUrls:['./label-table.component.css']
 })
-export class LabelTable {
+export class LabelTable implements OnInit{
 
   languages: string[] = [];
   keys: string[] = [];
   labels: Label[];
   modalRef: BsModalRef;
-  filterKey : string;
 
   keyForEdit:string=null;
 
@@ -28,9 +28,14 @@ export class LabelTable {
     currentPage: 1
   };
 
-  constructor(private modalService: BsModalService,private labelService: LabelService, private labelTableService:LabelTableService) {
+  constructor(private modalService: BsModalService,private labelService: LabelService, private labelTableService:LabelTableService, private fb: FormBuilder) {
     this.languages = labelService.languages;
   }
+
+  ngOnInit(){
+  }
+
+
 
   show(template: TemplateRef<any>) {
     this.keys = [];
@@ -99,6 +104,5 @@ export class LabelTable {
     this.keyForEdit = null;
     this.modalRef.hide()
   }
-
 
 }

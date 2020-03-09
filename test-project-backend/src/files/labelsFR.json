@@ -9,6 +9,11 @@
     "help": "example tooltip",
     "value": "Deuxième Example"
   },
+  "fxample.second": {
+    "key": "example.second",
+    "help": "example tooltip",
+    "value": "Deuxième Example"
+  },
   "example.third": {
     "key": "example.third",
     "help": "example tooltip",
