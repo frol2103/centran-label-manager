@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --preserve-symlinks --proxy-config ./src/environments/proxy.json",
+    "start": "ng serve --preserve-symlinks --proxy-config ./src/environments/proxy.json --port 4040",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

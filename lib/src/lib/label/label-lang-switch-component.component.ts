@@ -25,4 +25,14 @@ export class LabelLangSwitchComponent{
     getProd(){
         return this.labelService.prod;
     }
+
+    getShowKeys(){
+        return this.labelService.showKeys;
+    }
+
+    switchShowKeys(){
+        this.labelService.showKeys = !this.labelService.showKeys;
+    }
+
+
 }

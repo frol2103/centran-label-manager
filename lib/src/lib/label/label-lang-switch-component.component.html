@@ -2,8 +2,8 @@
   <li *ngFor="let lang of languages">
     <a [ngClass]="{'language-link active': getLangSelected()==lang, 'language-link':getLangSelected()!=lang}" (click)="setLang(lang)">{{lang}}</a>
   </li>
-
   <li *ngIf="!getProd()">
+    <a [ngClass]="{'language-link active' : getShowKeys() === true, 'language-link':getShowKeys()!= true}" (click)="switchShowKeys()">Keys</a>
     <label-table></label-table>
   </li>
 </ul>

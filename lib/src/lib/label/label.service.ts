@@ -16,6 +16,7 @@ export class LabelService {
 
     private labels: Subject<Label[]> = new BehaviorSubject([])
     private loaded: boolean = false;
+    private _showKeys: boolean = false;
 
     public lang: BehaviorSubject<string>;
 
@@ -68,6 +69,15 @@ export class LabelService {
 
     public changeLang(lang: string) {
         this.lang.next(lang)
+    }
+
+
+    get showKeys(): boolean {
+        return this._showKeys;
+    }
+
+    set showKeys(value: boolean) {
+        this._showKeys = value;
     }
 
     update(label: Label): Observable<{}> {

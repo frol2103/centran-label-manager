@@ -4,7 +4,7 @@ export class LabelConfig {
               public labelSourceUrl: string,
               public urlPrefix : string,
               public urlSuffix : string,
-              public prod: boolean,
+              public prod: boolean
               ){
   }
 }

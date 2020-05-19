@@ -34,10 +34,8 @@ export class LabelComponent implements OnInit {
     ngOnInit() {
         this.label = this.labelService.getLabel(this.key)
         this.labelValue = this.label.map(l => ((l) ? l.value : null)).filter(l => l !== null).map(labelTranslated => {
-            console.log("translation : ", labelTranslated);
             let message= labelTranslated;
             if( this.parameters != null && this.parameters instanceof Array &&  this.parameters.length > 0){
-                console.log('In here')
                 for (let _i = 0; _i < this.parameters.length; _i++) {
                     message = message.replace("{"+_i+"}",this.parameters[_i]);
                 }
@@ -48,9 +46,7 @@ export class LabelComponent implements OnInit {
                 })
             }
             if ( this.parameters !== null && this.parameters instanceof Object && Object.keys(this.parameters).length > 0){
-                console.log("JS OBJECT PARAMETER",this.parameters);
                 Object.keys(this.parameters).forEach( (key) => {
-                    console.log("KEY",key);
                     message = message.replace( '{' + key + '}', this.parameters[key]);
                 })
             }
@@ -58,8 +54,11 @@ export class LabelComponent implements OnInit {
         })
         if( this.noInfo == false) {
             this.labelHelp = this.label.map(l => (l) ? l.help : null)
-            console.log("HELP : " + this.labelHelp);
         }
 
+    }
+
+    getShowKeys(){
+        return this.labelService.showKeys;
     }
 }
