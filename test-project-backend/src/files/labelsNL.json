@@ -1,7 +1,7 @@
 {
   "example.first": {
     "key": "example.first",
-    "help": "example tooltip",
+    "help": "Les Etats membres ont la faculté d'accepter des factures simplifiées lorsque le montant de la facture est peu élevée, ou lorsque les pratiques commerciales ou administratives du secteur d'activité concerné ou les conditions techniques dans lesquelles les factures sont émises compliquent l'établissement d'une facture comprenant toutes les mentions requises. Le numéro d'identification à la TVA du fournisseur ou du prestataire de services peut être remplacé, dans la demande de remboursement, par la mention <<facture simplifiée>> et aucun numéro de facture ne doit être mentionné dans le cas ou l'Etat membre du remboursement accepte des factures simplifiées et la facture reçue par le requérant satisfait aux conditions posées par l'Etat membre.\n",
     "value": "Eerste Voorbeeld"
   },
   "example.second": {
