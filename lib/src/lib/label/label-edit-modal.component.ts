@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {BsModalRef} from "ngx-bootstrap";
+import {BsModalRef} from "ngx-bootstrap/modal";
 import {Label, LabelService} from "./label.service";
 
 @Component({

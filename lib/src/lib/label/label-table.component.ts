@@ -1,16 +1,16 @@
-import {Component, OnInit, TemplateRef} from "@angular/core";
-import {BsModalRef, BsModalService} from "ngx-bootstrap";
-import {LabelTableService} from "./labelTable.service";
-import {PaginationInstance} from "ngx-pagination";
-import {Label, LabelService} from "./label.service";
-import "rxjs/add/operator/find"
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Component, OnInit, TemplateRef} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {LabelTableService} from './labelTable.service';
+import {PaginationInstance} from 'ngx-pagination';
+import {Label, LabelService} from './label.service';
+import 'rxjs/add/operator/find';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 
 @Component({
   selector: 'label-table',
   templateUrl: './label-table.component.html',
-  styleUrls:['./label-table.component.css']
+  styleUrls: ['./label-table.component.css']
 })
 export class LabelTable implements OnInit{
 
@@ -19,16 +19,16 @@ export class LabelTable implements OnInit{
   labels: Label[];
   modalRef: BsModalRef;
 
-  keyForEdit:string=null;
+  keyForEdit: string= null;
 
-  nbrItemsPerPages = [5,10,25,50,100,500,1000];
+  nbrItemsPerPages = [5, 10, 25, 50, 100, 500, 1000];
 
   public config: PaginationInstance = {
     itemsPerPage: 5,
     currentPage: 1
   };
 
-  constructor(private modalService: BsModalService,private labelService: LabelService, private labelTableService:LabelTableService, private fb: FormBuilder) {
+  constructor(private modalService: BsModalService, private labelService: LabelService, private labelTableService: LabelTableService, private fb: FormBuilder) {
     this.languages = labelService.languages;
   }
 
@@ -41,31 +41,31 @@ export class LabelTable implements OnInit{
     this.keys = [];
     this.labelTableService.getData().subscribe(data => {
       this.labels = data;
-      for(let e in this.labels){
-        if( !this.keys.includes(this.labels[e].key))
+      for (let e in this.labels){
+        if ( !this.keys.includes(this.labels[e].key))
         this.keys.push(this.labels[e].key);
       }
-      this.modalRef = this.modalService.show(template,{class: 'gray modal-lg modal-xl min-size'});
+      this.modalRef = this.modalService.show(template, {class: 'gray modal-lg modal-xl min-size'});
     }, error => {
-      console.error("Error loading labels :" +error);
+      console.error('Error loading labels :' + error);
     });
   }
 
-  edit(value:string){
+  edit(value: string){
     this.keyForEdit = value;
   }
 
-  addLabel(value:string){
+  addLabel(value: string){
     this.labelService
-      .update(new Label(value, "TO_BE_CHANGED", null, 'FR'))
+      .update(new Label(value, 'TO_BE_CHANGED', null, 'FR'))
       .subscribe(
         null,
-        (e) => console.error("error", e),
+        (e) => console.error('error', e),
         () => {
             this.labelService.refreshLabels();
-            this.back()
+            this.back();
         }
-      )
+      );
   }
 
   back(){
@@ -73,12 +73,12 @@ export class LabelTable implements OnInit{
     this.keys = [];
     this.labelTableService.getData().subscribe(data => {
       this.labels = data;
-      for(let e in this.labels){
-        if( !this.keys.includes(this.labels[e].key))
+      for (let e in this.labels){
+        if ( !this.keys.includes(this.labels[e].key))
         this.keys.push(this.labels[e].key);
       }
     }, error => {
-      console.error("Error loading labels :" +error);
+      console.error('Error loading labels :' + error);
     });
   }
 
@@ -86,23 +86,23 @@ export class LabelTable implements OnInit{
     this.config.currentPage = number;
   }
 
-  getLabel(key:string, lang: string) {
+  getLabel(key: string, lang: string) {
     let found;
-    for(let e of this.labels){
-      if( e.key === key && e.lang === lang){
+    for (let e of this.labels){
+      if ( e.key === key && e.lang === lang){
         found = e;
       }
     }
     if (found) {
       return found;
     } else {
-      return new Label(key, null, null, lang)
+      return new Label(key, null, null, lang);
     }
   }
 
   close(){
     this.keyForEdit = null;
-    this.modalRef.hide()
+    this.modalRef.hide();
   }
 
 }

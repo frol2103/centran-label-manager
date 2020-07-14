@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {Observable} from "rxjs";
-import {BsModalService} from "ngx-bootstrap";
-import {Label, LabelService} from "./label.service";
-import {LabelEditModal} from "./label-edit-modal.component";
+import {Component, Input, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {BsModalService} from 'ngx-bootstrap/modal';
+import {Label, LabelService} from './label.service';
+import {LabelEditModal} from './label-edit-modal.component';
+import {filter, map} from 'rxjs/operators';
 
 
 @Component({
@@ -17,48 +18,48 @@ export class LabelComponent implements OnInit {
     label: Observable<Label>;
     labelValue: Observable<string>;
     labelHelp: Observable<string>;
-    @Input() noInfo : boolean = false;
-    @Input() positioning : string = "right";
-    @Input() customClass : string = "";
+    @Input() noInfo = false;
+    @Input() positioning = 'right';
+    @Input() customClass = '';
 
     constructor(private labelService: LabelService, private modalService: BsModalService) {
     }
 
     onEdit() {
-        if(!this.labelService.prod) {
+        if (!this.labelService.prod) {
             const modalRef = this.modalService.show(LabelEditModal, {class: 'gray modal-lg modal-xl'});
-            modalRef.content.setKey(this.key)
+            modalRef.content.setKey(this.key);
         }
 
     }
     ngOnInit() {
-        this.label = this.labelService.getLabel(this.key)
-        this.labelValue = this.label.map(l => ((l) ? l.value : null)).filter(l => l !== null).map(labelTranslated => {
-            let message= labelTranslated;
-            if( this.parameters != null && this.parameters instanceof Array &&  this.parameters.length > 0){
+        this.label = this.labelService.getLabel(this.key);
+        this.labelValue = this.label.pipe(map(l => ((l) ? l.value : null)), filter(l => l !== null), map(labelTranslated => {
+            let message = labelTranslated;
+            if ( this.parameters != null && this.parameters instanceof Array &&  this.parameters.length > 0){
                 for (let _i = 0; _i < this.parameters.length; _i++) {
-                    message = message.replace("{"+_i+"}",this.parameters[_i]);
+                    message = message.replace('{' + _i + '}', this.parameters[_i]);
                 }
             }
             if ( this.parameters !== null && this.parameters instanceof Map && this.parameters.size > 0){
                 this.parameters.forEach((value, key) => {
-                    message = message.replace("{" + key + "}",value);
-                })
+                    message = message.replace('{' + key + '}', value);
+                });
             }
             if ( this.parameters !== null && this.parameters instanceof Object && Object.keys(this.parameters).length > 0){
                 Object.keys(this.parameters).forEach( (key) => {
                     message = message.replace( '{' + key + '}', this.parameters[key]);
-                })
+                });
             }
             return message;
-        })
-        if( this.noInfo == false) {
-            this.labelHelp = this.label.map(l => (l) ? l.help : null)
+        }));
+        if ( this.noInfo == false) {
+            this.labelHelp = this.label.pipe(map(l => (l) ? l.help : null));
         }
 
     }
 
-    getShowKeys(){
+    getShowKeys() {
         return this.labelService.showKeys;
     }
 }
