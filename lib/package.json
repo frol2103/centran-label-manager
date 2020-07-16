@@ -32,9 +32,11 @@
     "postpackage": "cd .. && cd test-project && npm install ../lib/dist"
   },
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <6.0.0"
+    "@angular/core": ">=9.0.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1000.2",
+    "@angular/cli": "^10.0.3",
     "@angular/common": "^5.2.11",
     "@angular/compiler": "^5.2.11",
     "@angular/compiler-cli": "^5.2.11",
@@ -70,7 +72,6 @@
     "zone.js": "^0.8.29"
   },
   "dependencies": {
-    "@angular/cli": "^10.0.2",
     "@angular/forms": "^10.0.3",
     "@angular/http": "^7.2.16",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
