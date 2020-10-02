@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {LabelConfig} from "./label.config";
+import {LabelConfig} from "../label.config";
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {ajax} from "rxjs/ajax";
 import {catchError, concatMap, map} from 'rxjs/operators';

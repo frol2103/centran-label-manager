@@ -1,0 +1,164 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "centran-label-manager": {
+      "projectType": "library",
+      "root": "projects/centran-label-manager",
+      "sourceRoot": "projects/centran-label-manager/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/centran-label-manager/tsconfig.lib.json",
+            "project": "projects/centran-label-manager/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/centran-label-manager/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/centran-label-manager/src/test.ts",
+            "tsConfig": "projects/centran-label-manager/tsconfig.spec.json",
+            "karmaConfig": "projects/centran-label-manager/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/centran-label-manager/tsconfig.lib.json",
+              "projects/centran-label-manager/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "centran-label-manager-test": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/centran-label-manager-test",
+      "sourceRoot": "projects/centran-label-manager-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/centran-label-manager-test",
+            "index": "projects/centran-label-manager-test/src/index.html",
+            "main": "projects/centran-label-manager-test/src/main.ts",
+            "polyfills": "projects/centran-label-manager-test/src/polyfills.ts",
+            "tsConfig": "projects/centran-label-manager-test/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/centran-label-manager-test/src/favicon.ico",
+              "projects/centran-label-manager-test/src/assets"
+            ],
+            "styles": [
+              "projects/centran-label-manager-test/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/centran-label-manager-test/src/environments/environment.ts",
+                  "with": "projects/centran-label-manager-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "centran-label-manager-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "centran-label-manager-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "centran-label-manager-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/centran-label-manager-test/src/test.ts",
+            "polyfills": "projects/centran-label-manager-test/src/polyfills.ts",
+            "tsConfig": "projects/centran-label-manager-test/tsconfig.spec.json",
+            "karmaConfig": "projects/centran-label-manager-test/karma.conf.js",
+            "assets": [
+              "projects/centran-label-manager-test/src/favicon.ico",
+              "projects/centran-label-manager-test/src/assets"
+            ],
+            "styles": [
+              "projects/centran-label-manager-test/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/centran-label-manager-test/tsconfig.app.json",
+              "projects/centran-label-manager-test/tsconfig.spec.json",
+              "projects/centran-label-manager-test/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/centran-label-manager-test/e2e/protractor.conf.js",
+            "devServerTarget": "centran-label-manager-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "centran-label-manager-test:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "centran-label-manager"
+}
