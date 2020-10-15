@@ -17,14 +17,16 @@ import {LabelLangSwitchComponent} from "./label/label-lang-switch-component.comp
 import {LabelPipe} from "./label/label-pipe.pipe";
 import {TableFilterPipe} from "./label/table-filter.pipe";
 
+//const modalModuleModuleWithProviders = ModalModule.forChild();
+
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    ModalModule.forRoot(),
+    //modalModuleModuleWithProviders,
     NgxPaginationModule,
-    TooltipModule.forRoot(),
+//    TooltipModule.forRoot(),
   ],
   declarations: [LabelComponent,
     LabelLangSwitchComponent,

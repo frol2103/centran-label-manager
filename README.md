@@ -88,3 +88,11 @@ export const environment = {
 ajouter dans index.html :  
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+add in imports of module
+    ModalModule.forRoot(),
+    TooltipModule.forRoot(),
+
+from
+import {ModalModule} from "ngx-bootstrap/modal";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
