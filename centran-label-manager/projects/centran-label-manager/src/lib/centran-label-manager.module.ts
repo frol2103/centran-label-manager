@@ -38,7 +38,7 @@ import {TableFilterPipe} from "./label/table-filter.pipe";
   ],
   entryComponents: [LabelEditModal],
   providers: [LabelService, LabelTableService],
-  exports: [LabelComponent, LabelLangSwitchComponent, LabelPipe]
+  exports: [LabelComponent, LabelLangSwitchComponent, LabelPipe, LabelTable, LabelEditTable]
 })
 export class LabelModule {
 

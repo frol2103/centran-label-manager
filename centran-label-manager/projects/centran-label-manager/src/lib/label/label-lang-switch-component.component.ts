@@ -22,8 +22,8 @@ export class LabelLangSwitchComponent{
         return this.labelService.lang.getValue();
     }
 
-    getProd(){
-        return this.labelService.prod;
+    canEdit(){
+        return this.labelService.canEdit;
     }
 
     getShowKeys(){

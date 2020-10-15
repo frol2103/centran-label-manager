@@ -3,7 +3,6 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {LabelTableService} from './labelTable.service';
 import {PaginationInstance} from 'ngx-pagination';
 import {Label, LabelService} from './label.service';
-import 'rxjs/add/operator/find';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 

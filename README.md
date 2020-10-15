@@ -79,3 +79,12 @@ export const environment = {
  </pre>
  
  
+ 
+ 
+ 
+ 
+ Version 2 :
+ ²
+ajouter dans index.html :  
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">

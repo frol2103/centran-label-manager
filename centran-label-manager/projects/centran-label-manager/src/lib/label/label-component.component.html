@@ -1,8 +1,8 @@
 <span (contextmenu)="onEdit(); false" *ngIf="!getShowKeys()">
   <span *ngIf="(labelValue | async)" [innerHTML]="labelValue | async"></span>
-  <span *ngIf="!(label | async) || !(labelValue| async)" class="undefinedLabel">{{key}}</span>
+  <span *ngIf="!(label | async) || !(labelValue| async)" class="undefinedLabel">{{fullKey}}</span>
   <span *ngIf="labelHelp  | async"><i class="fa fa-info-circle" aria-hidden="true" tooltip="{{labelHelp | async}}" [containerClass]="customClass" [placement]="positioning"></i></span>
 </span>
 <span *ngIf="getShowKeys()">
-  <span>{{key}}</span>
+  <span>{{fullKey}}</span>
 </span>

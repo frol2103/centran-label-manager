@@ -20,7 +20,7 @@ export class LabelEditModal {
         this.labelService.getMultilingualLabel(key).subscribe(f => this.labels = f)
     }
 
-    private getLabel(lang: string) {
+    public getLabel(lang: string) {
         let found = this.labels.find(l => l.lang === lang)
         if (found) {
             return found;

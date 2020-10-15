@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Label, LabelService} from './label.service';
 import {Observable} from 'rxjs';
-import 'rxjs/add/observable/dom/ajax';
 import {ajax} from 'rxjs/ajax';
 import {map} from 'rxjs/operators';
 
@@ -18,7 +17,7 @@ export class LabelTableService {
   public getData(): Observable<Label[]> {
 
     let get$ = ajax({
-      url: this.labelService.labelSourceUrl + '/label',
+      url: this.labelService.labelSourceUrl + '/label/',
         method: 'GET'
     }).pipe(map(e => e.response));
     return get$;

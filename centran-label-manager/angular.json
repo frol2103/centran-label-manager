@@ -159,6 +159,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "centran-label-manager"
+    }
+  },
+  "defaultProject": "centran-label-manager",
+  "cli": {
+    "analytics": false
+  }
 }

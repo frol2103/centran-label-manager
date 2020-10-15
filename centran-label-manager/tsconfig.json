@@ -18,6 +18,12 @@
     },
     {
       "path": "./projects/centran-label-manager-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/centran-label-manager-test2/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/centran-label-manager-test2/tsconfig.spec.json"
     }
 ]
 }

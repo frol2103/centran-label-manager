@@ -1,11 +1,25 @@
 {
-  "name": "centran-label-manager",
-  "version": "0.0.1",
+  "name": "@fpelsser-label-manager",
+  "version": "3.0.1",
+  "description": "Centran Label Manager",
+  "author": "Centran",
+  "homepage": "https://github.com/centran-be/centran-label-manager.git",
+  "license": "MIT",
+  "keywords": [
+    "Centran",
+    "Label",
+    "Angular",
+    "Angular 2"
+  ],
   "peerDependencies": {
-    "@angular/common": "^10.0.4",
-    "@angular/core": "^10.0.4"
+    "@angular/common": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "ngx-bootstrap": "^6.1.0",
+    "ngx-pagination": "^5.0.0",
+    "rxjs": "~6.5.5",
+    "tslib": "^2.0.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
   }
 }

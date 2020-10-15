@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {Label} from "./label.service";
-import "rxjs/add/operator/find"
 
 @Component({
   selector: 'label-edit-table',
@@ -9,34 +8,34 @@ import "rxjs/add/operator/find"
 })
 export class LabelEditTable {
 
-    @Input("key")
-    key:string;
+  @Input("key")
+  key: string;
 
-    @Input("languages")
-    languages:string[];
+  @Input("languages")
+  languages: string[];
 
-    @Input("labels")
-    labels: Label[] = [];
+  @Input("labels")
+  labels: Label[] = [];
 
-    @Output() onBack = new EventEmitter();
+  @Output() onBack = new EventEmitter();
 
-    getLabel(lang: string) {
-        let found;
-        for( let label of this.labels){
-            if( label.key == this.key && label.lang == lang){
-                found = label;
-            }
-        }
-        if (found) {
-            return found;
-        } else {
-            return new Label(this.key, null, null, lang)
-        }
+  public getLabel(lang: string) {
+    let found;
+    for (let label of this.labels) {
+      if (label.key == this.key && label.lang == lang) {
+        found = label;
+      }
     }
-
-    goBack(){
-        this.onBack.emit();
+    if (found) {
+      return found;
+    } else {
+      return new Label(this.key, null, null, lang)
     }
+  }
+
+  goBack() {
+    this.onBack.emit();
+  }
 
 }
 

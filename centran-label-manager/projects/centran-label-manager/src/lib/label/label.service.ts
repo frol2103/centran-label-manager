@@ -15,6 +15,7 @@ export class LabelService {
     private labels: Subject<Label[]> = new BehaviorSubject([]);
     private loaded: boolean = false;
     private _showKeys: boolean = false;
+    public canEdit = false;
 
     public lang: BehaviorSubject<string>;
 
@@ -45,17 +46,11 @@ export class LabelService {
         return this.config.languages;
     }
 
-    public get appName(): string {
-        return this.config.appName;
-    }
-
     public get labelSourceUrl(): string {
         return this.config.labelSourceUrl;
     }
 
-    public get prod() : boolean {
-        return this.config.prod;
-    }
+
 
     public get urlPrefix() : string {
         return this.config.urlPrefix;
