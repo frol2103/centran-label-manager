@@ -1,6 +1,6 @@
 {
-  "name": "centran-label-manager",
-  "version": "3.0.1",
+  "name": "@fpelsser/label-manager",
+  "version": "3.0.6",
   "description": "Centran Label Manager",
   "author": "Centran",
   "homepage": "https://github.com/centran-be/centran-label-manager.git",
