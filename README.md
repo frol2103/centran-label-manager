@@ -16,6 +16,9 @@ ng serve centran-label-manager-test
 
 Publish Library
 <pre> cd dist/
+ng build centran-label-manager --prod
+cd dist/centran-label-manager
+vim package.json
 npm login
 npm publish --public
 </pre>
