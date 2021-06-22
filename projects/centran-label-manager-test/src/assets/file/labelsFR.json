@@ -7,7 +7,8 @@
   "example.second": {
     "key": "example.second",
     "help": "example tooltip",
-    "value": "Deuxième Example"
+    "value": "Deuxième Example \n multiligne",
+    "multiline": true
   },
   "fxample.second": {
     "key": "example.second",
