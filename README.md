@@ -1,98 +1,27 @@
-# Centran Label Manager
+# CentranLabelManager
 
-* Creation et Installation Package NPM
-* Documentation Label Manager
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
-## TL;DR
+## Development server
 
-Build Library
-<pre> npm run package </pre>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Test Library
+## Code scaffolding
 
-<pre>
-Go into /test-project => npm run start
-</pre>
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Publish Library
-<pre> cd dist/
-npm login
-npm publish --public
-</pre>
+## Build
 
-### Import LabelModule 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-<pre>
+## Running unit tests
 
-@NgModule({
-    declarations:[
-    ],
-    imports:[
-    LabelModule.forRoot({
-          languages: ["NL", "FR", "DE", "EN"],
-          labelSourceUrl: environment.labelSourceUrl,
-          appName: "appName",
-          urlPrefix: environment.labelPrefix,
-          urlSuffix: environment.labelSuffix,
-          prod: environment.production,
-        }),
-    ]
-    ...
-})
-</pre>
-        
-###  Configuration Basique : Lecture depuis Centranslator et DB
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-<pre>
-//environement.ts
-export const environment = {
-  production: false,
-  assetsSource:"",
-  labelSourceUrl : "/Project/api/translations/",
-  labelPrefix: "file/",
-  labelSuffix: ""
-};
-</pre>
-    
-###  Configuration Spéciale  : Lecture depuis fichier JSON
+## Running end-to-end tests
 
- <pre>
- //environement.prod.ts dans projet principal
- export const environment = {
-   production: true,
-   assetsSource:"/Project/",
-   labelSourceUrl : "/Project/assets/",
-   labelPrefix: "Label",
-   labelSuffix: ".json"
- };
- </pre>
- 
- 
- ### Augmenter taille modale 
- 
- <pre>
- assets/css/custom.css => a ajouter dans le angular(-cli).json 
- 
- .modal-lg {
- max-width: 1000px !important
- }
- </pre>
- 
- 
- 
- 
- 
- 
- Version 2 :
- ²
-ajouter dans index.html :  
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-add in imports of module
-    ModalModule.forRoot(),
-    TooltipModule.forRoot(),
+## Further help
 
-from
-import {ModalModule} from "ngx-bootstrap/modal";
-import {TooltipModule} from "ngx-bootstrap/tooltip";
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
