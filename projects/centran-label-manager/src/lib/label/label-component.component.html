@@ -1,9 +1,9 @@
-<span (contextmenu)="onEdit(); false" *ngIf="!getShowKeys()">
+<span class="clabel" (contextmenu)="onEdit(); false" *ngIf="!getShowKeys()">
   <span *ngIf="(labelValue | async) && !(label | async).multiline" [innerHTML]="labelValue | async"></span>
   <pre *ngIf="(labelValue | async) && (label | async).multiline" [innerHTML]="labelValue | async"></pre>
   <span *ngIf="labelService.canEdit && (!(label | async) || !(labelValue| async))" class="undefinedLabel">{{fullKey}}</span>
   <span *ngIf="labelHelp  | async"><i class="fa fa-info-circle" aria-hidden="true" ></i></span>
-</span>
+</spanc>
 <span *ngIf="getShowKeys()">
   <span>{{fullKey}}</span>
 </span>
