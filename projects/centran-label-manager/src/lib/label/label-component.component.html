@@ -3,7 +3,7 @@
   <pre *ngIf="(labelValue | async) && (label | async).multiline" [innerHTML]="labelValue | async"></pre>
   <span *ngIf="labelService.canEdit && (!(label | async) || !(labelValue| async))" class="undefinedLabel">{{fullKey}}</span>
   <span *ngIf="labelHelp  | async"><i class="fa fa-info-circle" aria-hidden="true" ></i></span>
-</spanc>
+</span>
 <span *ngIf="getShowKeys()">
   <span>{{fullKey}}</span>
 </span>
