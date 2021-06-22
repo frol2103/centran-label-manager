@@ -8,25 +8,26 @@ import {Label, LabelService} from "./label.service";
   templateUrl: './label-edit-form.component.html',
 })
 export class LabelEditForm implements OnInit {
-    @Input() label: Label
-    labelForm: FormGroup
-    submitPending = false
+    @Input() label: Label;
+    labelForm: FormGroup;
+    submitPending = false;
 
     constructor(private fb: FormBuilder, private labelService: LabelService) {
         this.labelForm = this.fb.group({
+            multiline: false,
             labelValue: '',
             help: '',
         });
     }
 
     ngOnInit() {
-        this.labelForm.patchValue({"help": this.label.help, "labelValue": this.label.value})
+        this.labelForm.patchValue({"help": this.label.help, "labelValue": this.label.value, "multiline": this.label.multiline})
     }
 
     onSubmit() {
         this.submitPending = true
         this.labelService
-            .update(new Label(this.label.key, this.labelForm.get("labelValue").value, this.labelForm.get("help").value, this.label.lang))
+            .update(new Label(this.label.key, this.labelForm.get("labelValue").value, this.labelForm.get("help").value, this.label.lang, this.labelForm.get("multiline").value))
             .subscribe(
                 null,
                 (e) => console.log("error", e),

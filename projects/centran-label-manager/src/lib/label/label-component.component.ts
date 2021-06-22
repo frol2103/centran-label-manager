@@ -25,10 +25,10 @@ export class LabelComponent implements OnInit {
   @Input() positioning = 'right';
   @Input() customClass = '';
 
-  constructor(private labelService: LabelService, private modalService: BsModalService) {
+  constructor(public labelService: LabelService, private modalService: BsModalService) {
   }
 
-  get fullKey() : string {
+  get fullKey(): string {
     if(this.prefix){
       return this.prefix + LabelComponent.SEPARATOR + this.key;
     } else {

@@ -1,8 +1,13 @@
 <form [formGroup]="labelForm" (ngSubmit)="onSubmit()" novalidate>
-
+test
+  <div class="form-group">
+    <label for="multiline">Multiline </label>
+    <input id="multiline" type="checkbox" class="form-control" formControlName="multiline"/>
+  </div>
   <div class="form-group">
     <label for="input">Label </label>
-    <input id="input" class="form-control" formControlName="labelValue">
+    <input *ngIf="!labelForm.get('multiline').value" id="input" class="form-control" formControlName="labelValue">
+    <textarea *ngIf="labelForm.get('multiline').value"  id="textarea" class="form-control" formControlName="labelValue"></textarea>
   </div>
   <div class="form-group">
     <label for="textarea">Help</label>

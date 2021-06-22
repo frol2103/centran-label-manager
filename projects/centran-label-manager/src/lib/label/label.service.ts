@@ -5,7 +5,7 @@ import {ajax} from "rxjs/ajax";
 import {catchError, concatMap, map} from 'rxjs/operators';
 
 export class Label {
-    constructor(public key: string, public value: string, public help: string, public lang: string) {
+    constructor(public key: string, public value: string, public help: string, public lang: string, public multiline: boolean=false) {
     }
 }
 

@@ -7,6 +7,8 @@ import {LabelModule} from "projects/centran-label-manager/src/public-api";
 import {environment} from './../environments/environment';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {BackendMockInterceptor} from './backend-mock-interceptor'
+import {ModalModule} from "ngx-bootstrap/modal";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
 @NgModule({
   declarations: [
     AppComponent
@@ -14,12 +16,13 @@ import {BackendMockInterceptor} from './backend-mock-interceptor'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ModalModule.forRoot(),
+    TooltipModule.forRoot(),
     LabelModule.forRoot({
       languages: ["FR"],
       labelSourceUrl: environment.labelSourceUrl,
       urlPrefix: environment.labelPrefix,
       urlSuffix: environment.labelSuffix,
-      prod: environment.production,
     })
   ],
   providers: [
